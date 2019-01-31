@@ -1,0 +1,26 @@
+{
+  "name": "Desafio Oi Ecommerce",
+  "homepage": "https://github.com/majorsaaam/Desafio-Oi-Ecommerce",
+  "authors": [
+    "Samantha Marques <sammy.marques@outlook.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "keywords": [
+    "ecommerce",
+    "javascript",
+    "gulp",
+    "knockoutjs",
+    "html5",
+    "less",
+    "bower"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

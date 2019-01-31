@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create(),
 const origem = './assets/less';
 const destino = './assets/css';
 
+
 gulp.task('less', function() {
     gulp.src(`${origem}/*.less`) /* observa o arquivo .less */
         .pipe(less()) /* converte em .css usando o import do gulp-less */
@@ -20,6 +21,7 @@ gulp.task('livereload', ['less'], function() {
     });
     gulp.watch(`${origem}/*.less`, ['less']); 
     gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch('./assets/js/ko-models.js').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['livereload']);
