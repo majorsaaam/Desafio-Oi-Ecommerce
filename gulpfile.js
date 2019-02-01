@@ -19,9 +19,9 @@ gulp.task('livereload', ['less'], function() {
             baseDir: "./"
         }
     });
-    gulp.watch(`${origem}/*.less`, ['less']); 
     gulp.watch("*.html").on('change', browserSync.reload);
     gulp.watch('./assets/js/ko-models.js').on('change', browserSync.reload);
+    gulp.watch(`${origem}/*.less`, ['less']).on('change', browserSync.reload); 
 });
 
 gulp.task('default', ['livereload']);

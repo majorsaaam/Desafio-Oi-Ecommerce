@@ -1,3 +1,71 @@
+@font-face {
+  font-family: "Roboto";
+  src: url('../fonts/Roboto-Condensed.ttf') format('truetype');
+}
+a {
+  border-bottom: 1px solid #000;
+  color: inherit !important;
+}
+a:hover {
+  border-bottom: 1px solid #8f25e5;
+  text-decoration: none !important;
+}
+h2,
+h4,
+.paragraph {
+  font-family: "Roboto", sans-serif;
+}
+.bg_light-gray {
+  background-color: #f7f7f7;
+}
+.bg_crescent-light {
+  background: #f7f7f7;
+  /* fallback */
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f7f7f7 0%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+}
+.select-oi {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #8f25e5 !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  background-image: url("data:image/svg+xml,%3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In --%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:a='http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/' x='0px' y='0px' width='295.8px' height='169.1px' viewBox='0 0 295.8 169.1' style='enable-background:new 0 0 295.8 169.1;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23664595;%7D%0A%3C/style%3E%3Cdefs%3E%3C/defs%3E%3Cpath id='XMLID_16_' class='st0' d='M292.9,2.3c-3.6-3.3-9.2-3.1-12.5,0.5L147.9,147.2L15.4,2.9C12.1-0.7,6.5-1,2.9,2.3 C-0.7,5.6-1,11.3,2.3,14.9l138.9,151.3c1.8,1.9,4.2,2.9,6.6,2.9c2.4,0,4.9-0.9,6.6-2.9L293.5,14.9C296.8,11.3,296.5,5.6,292.9,2.3z' /%3E%3C/svg%3E%0A") !important;
+  background-color: transparent !important;
+  background-size: 20px !important;
+}
+.card-plano {
+  width: 255px;
+  height: 370px;
+  box-shadow: 0px 0px 50px -23px rgba(0, 0, 0, 0.3);
+  font-family: "Roboto", sans-serif;
+}
+.row-btn-quero {
+  position: absolute;
+  bottom: 13px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row-btn-quero .btn {
+  background-color: gold;
+  border-radius: 2px;
+  height: 45px;
+}
+.row-btn-quero .btn:hover {
+  background-color: #f6da47;
+}
+.div_preco {
+  margin-top: -5px;
+}
 .logo--small {
   width: 20px;
   height: 20px;
@@ -18,4 +86,51 @@
 .preco_centavo .preco_centavo--str {
   position: relative;
   font-size: 14px;
+}
+.carousel-inner .active.left {
+  left: -33%;
+}
+.carousel-inner .next {
+  left: 33%;
+}
+.carousel-inner .prev {
+  left: -33%;
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-multi .carousel-inner > .item {
+  transition: 500ms ease-in-out left;
+}
+.carousel-multi .carousel-inner > .item > .media-card {
+  background: #333;
+  border-right: 10px solid #fff;
+  display: table-cell;
+  width: 1%;
+}
+.carousel-multi .carousel-inner > .item > .media-card:last-of-type {
+  border-right: none;
+}
+.carousel-multi .carousel-inner .active {
+  display: table;
+}
+.carousel-multi .carousel-inner .active.left {
+  left: -33%;
+}
+.carousel-multi .carousel-inner .active.right {
+  left: 33%;
+}
+.carousel-multi .carousel-inner .next {
+  left: 33%;
+}
+.carousel-multi .carousel-inner .prev {
+  left: -33%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-multi .carousel-inner > .item {
+    transition: 500ms ease-in-out all;
+    backface-visibility: visible;
+    transform: none!important;
+  }
 }
