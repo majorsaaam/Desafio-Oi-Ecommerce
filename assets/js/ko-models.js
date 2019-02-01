@@ -5,10 +5,12 @@ $(document).ready(function() {
 
     fetch(urlPromos).then(function(next) {
         next.json().then(function(res) {
-            console.log(res);
-                res.forEach(el => {
-                    el.dependentePreco = el["dependente-preco"];
-                });
+            res.forEach(el => {
+                el.dependentePreco = el["dependente-preco"];
+
+                el.precoReal = el["preco"].split(",")[0];
+                el.precoCentavo = el["preco"].split(",")[1];
+            });
             ko.applyBindings({planos: res});
         })
     });

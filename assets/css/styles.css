@@ -1,0 +1,21 @@
+.logo--small {
+  width: 20px;
+  height: 20px;
+  margin: 4px;
+}
+.preco_real .preco_real--valor {
+  font-size: 45px;
+}
+.preco_centavo {
+  font-size: 20px;
+  width: 40px !important;
+  top: -10px;
+}
+.preco_centavo .preco_centavo--valor {
+  top: 13px;
+  position: relative;
+}
+.preco_centavo .preco_centavo--str {
+  position: relative;
+  font-size: 14px;
+}

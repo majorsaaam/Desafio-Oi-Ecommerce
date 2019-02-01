@@ -24,13 +24,72 @@
     <div data-bind="foreach: planos" class="row">
       <div class="col-3 m-2">
         <div class="card card-plano">
-          <div class="card-body">
+          <div class="card-body pl-0 pr-0 text-center">
             <p data-bind="text: plano" class="small text-muted"></p>
             <h3 class="font-weight-bold" data-bind="text: velocidade"></h3>
-            <p class="small">Apps com internet ilimitada:</p>
-            <p class="small">Conteúdo digital em vídeo:</p>
-            <p class="small">Adicione dependentes<br><span class="text-muted">por mais R$<span data-bind="text: dependentePreco"></span> cada</span></p>
-            <h2 class="font-weight-bold">R$ <span data-bind="text: preco"></span></h2>
+
+            <!-- ko if: isencao.length > 0 -->
+              <p class="mb-0 small">Apps com internet ilimitada:</p>
+              <div data-bind="with: isencao" class="mb-3">
+                <!-- ko if: indexOf('netflix') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/netflix.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('youtube') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/youtube.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('facebook') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/facebook.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('mensseger') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/messenger.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('instagram') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/instagram.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('whatsapp') > -1 -->
+                <img class="logo--small" src="assets/img/isencao/whatsapp.jpg">
+                <!-- /ko -->
+              </div>
+            <!-- /ko -->
+
+            <!-- ko if: conteudoDigital.length > 0 -->
+              <p class="mb-0 small">Conteúdo digital em vídeo:</p>
+              <div data-bind="with: conteudoDigital" class="mb-3">
+                <!-- ko if: indexOf('fox') > -1 -->
+                <img class="logo--small" src="assets/img/fox.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('hbogo') > -1 -->
+                <img class="logo--small" src="assets/img/hbogo.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('watch-espn') > -1 -->
+                <img class="logo--small" src="assets/img/watch-espn.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('discovery-kids') > -1 -->
+                <img class="logo--small" src="assets/img/discovery-kids.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('noggin') > -1 -->
+                <img class="logo--small" src="assets/img/noggin.jpg"> 
+                <!-- /ko -->
+                <!-- ko if: indexOf('colecao-oi') > -1 -->
+                <img class="logo--small" src="assets/img/colecao-oi.jpg">
+                <!-- /ko -->
+              </div>
+            <!-- /ko -->
+
+            <p data-bind="if: dependentePreco" class="small">
+              Adicione dependentes<br>
+              <span class="text-muted small">por mais R$<span data-bind="text: dependentePreco"></span> cada</span>
+            </p>
+
+            <div class="row no-gutters  justify-content-center">
+              <div class="col-auto align-self-end preco_real">
+                <span class="h4">R$</span> <span class="preco_real--valor" data-bind="text: precoReal"></span>
+              </div>
+              <div class="col-auto align-self-end preco_centavo">
+                <span class="preco_centavo--valor">,<span data-bind="text: precoCentavo"></span></span> <span class="preco_centavo--str">/mês</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
