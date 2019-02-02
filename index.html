@@ -7,7 +7,7 @@
     <title>Desafio Oi Ecommerce</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/js/glider/glider.css">
+    <link rel="stylesheet" href="glider.min.css" type="text/css">
     
 </head>
 <body><script async></script>
@@ -36,8 +36,8 @@
       <h2 class="mb-4 text-uppercase">Desafio E-commerce</h2>
       <h4 class="mt-4 mb-4 text-center">Todas as nossas ofertas:</h4>
 
-        <div class="glider-contain">
-          <div class="glider" data-bind="foreach: planos">
+        <div class="glider-contain multiple">
+          <div class="glider"  data-bind="foreach: planos, gliderCarousel">
             <!-- #region card do plano -->
             <div class="mt-4 m-2">
               <div class="card card-plano">
@@ -112,9 +112,9 @@
             </div>
             <!-- #endregion -->
           </div>
-          <button role="button" aria-label="Previous" class="glider-prev">«</button>
-          <button role="button" aria-label="Next" class="glider-next">»</button>
-          <div role="tablist" class="dots"></div>
+          <button aria-label="Previous" class="glider-prev">«</button>
+          <button aria-label="Next" class="glider-next">»</button>
+          <div class="dots" id="dots"></div>
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src='assets/bower_components/knockout/dist/knockout.js' type='text/javascript'></script>
 <script src="assets/js/ko-models.js" type="text/javascript"></script>
-<script src="assets/js/glider/glider.js"></script>
+<script src="glider.min.js"></script>
 <script>
 </script>
 </body>
