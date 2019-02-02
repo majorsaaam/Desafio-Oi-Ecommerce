@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Desafio Oi Ecommerce</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="glider.min.css" type="text/css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desafio Oi Ecommerce</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="glider.min.css" type="text/css">
 </head>
-<body><script async></script>
+<body class="d-flex flex-column vh-100"><script async></script>
 
-  <header class="pb-4 bg_light-gray">
+  <header class="pt-3 pb-4 bg_light-gray">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-auto">
           <img src="assets/img/oi.png">
         </div>
         <div class="col-auto">
-          <div class="form-group mb-0 ">
-            <select id="select-regiao" class="custom-select select-oi mr-2">
-              <option value="0">Todos</option>
-              <option value="1">Rio de Janeiro, RJ</option>
-              <option value="2">São Paulo, SP</option>
+          <div id="select-regiao" data-bind="with: localizacoes" class="form-group mb-0">
+            <select id="selected-option" data-bind="options: planosPorLocalizacao, value: planosSelecionados" class="custom-select select-oi mr-2">
             </select>
           </div>
         </div>
@@ -31,13 +27,14 @@
     </div>
   </header>
 
-  <section class="bg_crescent-light">
+  <main class="bg_crescent-light">
     <div class="container">
       <h2 class="mb-4 text-uppercase">Desafio E-commerce</h2>
       <h4 class="mt-4 mb-4 text-center">Todas as nossas ofertas:</h4>
 
-        <div class="glider-contain multiple">
-          <div class="glider"  data-bind="foreach: planos, gliderCarousel">
+      <div class="glider-contain multiple">
+        <div class="glider-wrap">
+          <div class="glider" data-bind="foreach: planos, gliderCarousel">
             <!-- #region card do plano -->
             <div class="mt-4 m-2">
               <div class="card card-plano">
@@ -118,9 +115,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <footer class="bg_light-gray w-100">
+  <footer class="bg_light-gray mt-auto">
     <div class="container">
       <div class="row mt-2">
         <div class="col p-5 text-center">
@@ -136,7 +133,5 @@
 <script src='assets/bower_components/knockout/dist/knockout.js' type='text/javascript'></script>
 <script src="assets/js/ko-models.js" type="text/javascript"></script>
 <script src="glider.min.js"></script>
-<script>
-</script>
 </body>
 </html>
