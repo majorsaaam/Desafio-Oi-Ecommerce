@@ -1,12 +1,14 @@
 $(document).ready(function() {
     var urlPromos = "https://desafio-oi.herokuapp.com/";
     var cidades = ["rj", "sp"];
-
-    window.addEventListener('load', function(){
-        document.querySelector('.glider').Glider({
-          slidesToShow: 4,
-          slidesToScroll: auto
-        });
+    $("#carousel").slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        dots: true,
+        draggable: true,
+        variableWidth: true
     });
 
     fetch(urlPromos).then(function(next) {

@@ -134,3 +134,11 @@ h4,
     transform: none!important;
   }
 }
+.slick-prev:before,
+.slick-next:before {
+  color: red !important;
+  z-index: 999;
+}
+.slick-slide {
+  width: 200px;
+}
