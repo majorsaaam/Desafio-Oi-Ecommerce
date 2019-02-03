@@ -1,6 +1,7 @@
 @-moz-document url-prefix() {.glider-track {margin-bottom: 17px;}.glider-wrap {overflow: hidden;}}
 /* ^ Esconde a barra de rolagem do carousel no firefox */
 
+@mobile: ~"only screen and (min-width: 300px) and (max-width: 580px)";
 @caminho-fonte: "../fonts";
 @fonte-sans: "Roboto", sans-serif;
 @roxo-oi: #8f25e5;
@@ -89,4 +90,7 @@ h2, h4, .paragraph {
         position: relative;
         font-size: 14px;
     }
+}
+@media @mobile {
+    .glider-prev, .glider-next {display: none;}
 }
