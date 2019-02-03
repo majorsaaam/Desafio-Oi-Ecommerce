@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Desafio Oi Ecommerce</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/js/glider/glider.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desafio Oi Ecommerce</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="glider.min.css" type="text/css">
 </head>
-<body><script async></script>
+<body class="d-flex flex-column vh-100"><script async></script>
 
-  <header class="pb-4 bg_light-gray">
+  <header class="pt-3 pb-4 bg_light-gray">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-auto">
           <img src="assets/img/oi.png">
         </div>
         <div class="col-auto">
-          <div class="form-group mb-0 ">
-            <select id="select-regiao" class="custom-select select-oi mr-2">
-              <option value="0">Todos</option>
-              <option value="1">Rio de Janeiro, RJ</option>
-              <option value="2">São Paulo, SP</option>
+          <div id="select-regiao" data-bind="with: localizacoes" class="form-group mb-0">
+            <select id="selected-option" data-bind="options: planosPorLocalizacao, value: planosSelecionados" class="custom-select select-oi mr-2">
             </select>
           </div>
         </div>
@@ -31,80 +27,83 @@
     </div>
   </header>
 
-  <section class="bg_crescent-light">
+  <main class="bg_crescent-light pb-3">
     <div class="container">
       <h2 class="mb-4 text-uppercase">Desafio E-commerce</h2>
       <h4 class="mt-4 mb-4 text-center">Todas as nossas ofertas:</h4>
 
-        <div class="glider-contain">
-          <div class="glider" data-bind="foreach: planos">
+      <div class="glider-contain multiple">
+        <div class="glider-wrap">
+          <div class="glider">
             <!-- #region card do plano -->
-            <div class="mt-4 m-2">
-              <div class="card card-plano">
-                <div class="card-body pl-0 pr-0 pt-2 text-center align-items-center">
-                  <span data-bind="text: plano" class="small text-muted"></span>
-                  <h3 class="font-weight-bold" data-bind="text: velocidade"></h3>
-                  <!-- ko if: isencao.length > 0 -->
-                    <p class="mb-0 small">Apps com <a href="#">internet ilimitada</a>:</p>
-                    <div data-bind="with: isencao" class="mb-3">
-                      <!-- ko if: indexOf('netflix') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/netflix.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('youtube') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/youtube.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('facebook') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/facebook.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('mensseger') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/messenger.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('instagram') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/instagram.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('whatsapp') > -1 -->
-                      <img class="logo--small" src="assets/img/isencao/whatsapp.jpg">
-                      <!-- /ko -->
+            <div class="glider-track" data-bind="foreach: planos, gliderCarousel">
+              <div class="mt-4 m-2">
+                <div class="card card-plano mx-auto">
+                  <div class="card-body pl-0 pr-0 pt-2 text-center align-items-center">
+                    <span data-bind="text: plano" class="small text-muted"></span>
+                    <h3 class="font-weight-bold" data-bind="text: velocidade"></h3>
+                    <!-- ko if: isencao.length > 0 -->
+                      <p class="mb-0 small">Apps com <a href="#">internet ilimitada</a>:</p>
+                      <div data-bind="with: isencao" class="mb-3">
+                        <!-- ko if: indexOf('netflix') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/netflix.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('youtube') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/youtube.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('facebook') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/facebook.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('mensseger') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/messenger.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('instagram') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/instagram.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('whatsapp') > -1 -->
+                        <img class="logo--small" src="assets/img/isencao/whatsapp.jpg">
+                        <!-- /ko -->
+                      </div>
+                    <!-- /ko -->
+                    <!-- ko if: conteudoDigital.length > 0 -->
+                      <p class="mb-0 small"><a href="#">Conteúdo digital</a> em vídeo:</p>
+                      <div data-bind="with: conteudoDigital" class="mb-3">
+                        <!-- ko if: indexOf('fox') > -1 -->
+                        <img class="logo--small" src="assets/img/fox.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('hbogo') > -1 -->
+                        <img class="logo--small" src="assets/img/hbogo.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('watch-espn') > -1 -->
+                        <img class="logo--small" src="assets/img/watch-espn.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('discovery-kids') > -1 -->
+                        <img class="logo--small" src="assets/img/discovery-kids.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('noggin') > -1 -->
+                        <img class="logo--small" src="assets/img/noggin.jpg"> 
+                        <!-- /ko -->
+                        <!-- ko if: indexOf('colecao-oi') > -1 -->
+                        <img class="logo--small" src="assets/img/colecao-oi.jpg">
+                        <!-- /ko -->
+                      </div>
+                    <!-- /ko -->
+                    <p data-bind="if: dependentePreco" class="mb-0 small">
+                      Adicione dependentes<br>
+                      <span class="text-muted small">por mais R$<span data-bind="text: dependentePreco"></span> cada</span>
+                    </p>
+                    <div class="row no-gutters justify-content-center div_preco">
+                      <div class="col-auto align-self-end preco_real">
+                        <span class="h4">R$</span> <span class="preco_real--valor" data-bind="text: precoReal"></span>
+                      </div>
+                      <div class="col-auto align-self-end preco_centavo">
+                        <span class="preco_centavo--valor">,<span data-bind="text: precoCentavo"></span></span> <span class="preco_centavo--str">/mês</span>
+                      </div>
                     </div>
-                  <!-- /ko -->
-                  <!-- ko if: conteudoDigital.length > 0 -->
-                    <p class="mb-0 small"><a href="#">Conteúdo digital</a> em vídeo:</p>
-                    <div data-bind="with: conteudoDigital" class="mb-3">
-                      <!-- ko if: indexOf('fox') > -1 -->
-                      <img class="logo--small" src="assets/img/fox.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('hbogo') > -1 -->
-                      <img class="logo--small" src="assets/img/hbogo.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('watch-espn') > -1 -->
-                      <img class="logo--small" src="assets/img/watch-espn.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('discovery-kids') > -1 -->
-                      <img class="logo--small" src="assets/img/discovery-kids.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('noggin') > -1 -->
-                      <img class="logo--small" src="assets/img/noggin.jpg"> 
-                      <!-- /ko -->
-                      <!-- ko if: indexOf('colecao-oi') > -1 -->
-                      <img class="logo--small" src="assets/img/colecao-oi.jpg">
-                      <!-- /ko -->
-                    </div>
-                  <!-- /ko -->
-                  <p data-bind="if: dependentePreco" class="mb-0 small">
-                    Adicione dependentes<br>
-                    <span class="text-muted small">por mais R$<span data-bind="text: dependentePreco"></span> cada</span>
-                  </p>
-                  <div class="row no-gutters justify-content-center div_preco">
-                    <div class="col-auto align-self-end preco_real">
-                      <span class="h4">R$</span> <span class="preco_real--valor" data-bind="text: precoReal"></span>
-                    </div>
-                    <div class="col-auto align-self-end preco_centavo">
-                      <span class="preco_centavo--valor">,<span data-bind="text: precoCentavo"></span></span> <span class="preco_centavo--str">/mês</span>
-                    </div>
-                  </div>
-                  <div class="row-btn-quero">
-                    <div class="col">
-                      <button class="btn btn-block btn-quero w-75 mx-auto">Eu quero</button>
+                    <div class="row-btn-quero">
+                      <div class="col">
+                        <button class="btn btn-block btn-quero w-75 mx-auto">Eu quero</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -112,15 +111,15 @@
             </div>
             <!-- #endregion -->
           </div>
-          <button role="button" aria-label="Previous" class="glider-prev">«</button>
-          <button role="button" aria-label="Next" class="glider-next">»</button>
-          <div role="tablist" class="dots"></div>
+          <button aria-label="Previous" class="glider-prev">«</button>
+          <button aria-label="Next" class="glider-next">»</button>
+          <div class="dots" id="dots"></div>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-  <footer class="bg_light-gray w-100">
+  <footer class="bg_light-gray mt-auto">
     <div class="container">
       <div class="row mt-2">
         <div class="col p-5 text-center">
@@ -135,8 +134,6 @@
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src='assets/bower_components/knockout/dist/knockout.js' type='text/javascript'></script>
 <script src="assets/js/ko-models.js" type="text/javascript"></script>
-<script src="assets/js/glider/glider.js"></script>
-<script>
-</script>
+<script src="glider.min.js"></script>
 </body>
 </html>

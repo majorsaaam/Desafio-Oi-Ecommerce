@@ -4,16 +4,16 @@
   "authors": [
     "Samantha Marques <sammy.marques@outlook.com>"
   ],
-  "description": "",
+  "description": "Exibição de cards em carousel usando KnockoutJS",
   "main": "index.html",
   "keywords": [
-    "ecommerce",
     "javascript",
     "gulp",
     "knockoutjs",
     "html5",
     "less",
-    "bower"
+    "glider",
+    "carousel"
   ],
   "license": "MIT",
   "ignore": [

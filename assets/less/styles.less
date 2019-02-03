@@ -1,3 +1,7 @@
+@-moz-document url-prefix() {.glider-track {margin-bottom: 17px;}.glider-wrap {overflow: hidden;}}
+/* ^ Esconde a barra de rolagem do carousel no firefox */
+
+@mobile: ~"only screen and (min-width: 300px) and (max-width: 580px)";
 @caminho-fonte: "../fonts";
 @fonte-sans: "Roboto", sans-serif;
 @roxo-oi: #8f25e5;
@@ -6,6 +10,7 @@
     src: url('@{caminho-fonte}/Roboto-Condensed.ttf') format('truetype');
 }
 
+.vh-100 {height: 100vh;}
 a {
     border-bottom: 1px solid #000;
     color: inherit !important;
@@ -86,50 +91,6 @@ h2, h4, .paragraph {
         font-size: 14px;
     }
 }
-
-.carousel-inner .active.left { left: -33%; }
-.carousel-inner .next        { left:  33%; }
-.carousel-inner .prev        { left: -33%; }
-.carousel-control.left,.carousel-control.right {background-image:none;}
-
-.carousel-multi{
-	.carousel-inner{
-    > .item{
-      transition: 500ms ease-in-out left;
-      
-      > .media-card{
-        background: #333;
-        border-right: 10px solid #fff;
-			  display: table-cell;
-			  width: 1%;
-
-        &:last-of-type{
-          border-right: none;
-        }
-      }
-    }
-    .active{
-      display: table;
-      &.left{
-        left:-33%;
-      }
-      &.right{
-        left:33%;
-      }
-    }
-    .next{
-      left: 33%;
-    }
-    .prev{
-      left: -33%;
-    }
-    @media all and (transform-3d), (-webkit-transform-3d) {
-      > .item{
-        // use your favourite prefixer here
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none!important;
-      }
-    }
-  }
+@media @mobile {
+    .glider-prev, .glider-next {display: none;}
 }
